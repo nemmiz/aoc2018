@@ -23,7 +23,6 @@ def count_constellations(coords):
                     new_src.append(coord1)
             src = new_src
         num += 1
-
     return num
 
 
