@@ -75,7 +75,7 @@ class Pots:
 
 def main():
     rules = [0] * 32
-    with open('12_input') as infile:
+    with open('../input/12.txt') as infile:
         for i, line in enumerate(infile):
             if i == 0:
                 initial_state = line[15:-1]
@@ -90,8 +90,20 @@ def main():
         pots.process()
     print(pots.pots_sum())
 
-    # For the second task (50 billion generations) find the 
+    # For the second task (50 billion generations) there's a recurring pattern
+    # for values 5*10^N where N >= 3. In my input, the value grows like:
+    #    500 => 21684
+    #   5000 => 201684
+    #  50000 => 2001684
+    # 500000 => 20001684
+    # ...and so on. So a dirty solution to get to 50 billion is to take the
+    # result for 500 and insert the zeros
     # pattern for 5000, 50000, 500000, etc. and go from there.
+    pots = Pots(initial_state, rules)
+    for i in range(500):
+        pots.process()
+    tmp = str(pots.pots_sum())
+    print(tmp[:1]+'00000000'+tmp[1:])
 
 
 if __name__ == "__main__":

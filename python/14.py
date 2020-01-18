@@ -27,7 +27,7 @@ def calculate(n):
             recipes.append(new_recipe-10)
         current[0] = (current[0] + 1 + recipes[current[0]]) % len(recipes)
         current[1] = (current[1] + 1 + recipes[current[1]]) % len(recipes)
-    print(n, '=>', ''.join([str(r) for r in recipes[n:n+10]]))
+    print(''.join([str(r) for r in recipes[n:n+10]]))
 
 
 def count_recipes_before(score_seq):
@@ -49,21 +49,13 @@ def count_recipes_before(score_seq):
                 if score_seq[i] != recipes[checked+i]:
                     break
             else:
-                print(''.join([str(r) for r in score_seq]), '=>', checked)
+                print(checked)
                 return
             checked += 1
 
 
 def main():
-    calculate(9)
-    calculate(5)
-    calculate(18)
-    calculate(2018)
     calculate(147061)
-    count_recipes_before((5,1,5,8,9))
-    count_recipes_before((0,1,2,4,5))
-    count_recipes_before((9,2,5,1,0))
-    count_recipes_before((5,9,4,1,4))
     count_recipes_before((1,4,7,0,6,1))
 
 

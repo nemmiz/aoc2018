@@ -68,8 +68,11 @@ def best_area(grid_serial_number, square_sizes):
 
 
 def main():
-    print(best_area(1723, [3]))
-    print(best_area(1723, range(1, 301)))
+    x = best_area(1723, [3])
+    print(x[0], x[1], sep=',')
+
+    x = best_area(1723, range(1, 301))
+    print(x[0], x[1], x[3], sep=',')
 
 
 if __name__ == "__main__":

@@ -14,8 +14,7 @@ def react(units):
             i += 1
     return len(data)
 
-
-with open('05_input') as infile:
+with open('../input/05.txt') as infile:
     for line in infile:
         data = [ord(char) for char in line]
         break

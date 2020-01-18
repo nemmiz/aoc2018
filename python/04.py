@@ -26,7 +26,6 @@ class Guard:
         minute = self.schedule.index(times_slept)
         return (minute, times_slept)
         
-
 def parse_number(text):
     num = 0
     for ch in text:
@@ -34,10 +33,7 @@ def parse_number(text):
             num = num * 10 + int(ch)
     return num
 
-def parse_line(line):
-    print(parse_number(line[1:17]), line[19:-1])
-
-with open('04_input') as infile:
+with open('../input/04.txt') as infile:
     events = [(parse_number(line[1:17]), line[19:-1]) for line in infile]
     events.sort(key=lambda event: event[0])
 
@@ -61,12 +57,7 @@ for guard in guards.values():
     data.append((guard.gid, minute, times_slept, guard.total_sleep_time))
 
 sleepiest_guard = sorted(data, key=lambda guard: guard[3])[-1]
-print('=== Sleepiest guard ===')
-print('Guard ID:', sleepiest_guard[0])
-print('Minute:', sleepiest_guard[1])
+print(sleepiest_guard[0] * sleepiest_guard[1])
 
 sleepiest_minute = sorted(data, key=lambda guard: guard[2])[-1]
-print('=== Most slept minute ===')
-print('Guard ID:', sleepiest_minute[0])
-print('Minute:', sleepiest_minute[1])
-
+print(sleepiest_minute[0] * sleepiest_minute[1])

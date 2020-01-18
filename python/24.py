@@ -119,7 +119,7 @@ def main():
     immune_system = []
     infection = []
 
-    with open('24_input') as infile:
+    with open('../input/24.txt') as infile:
         current_army = None
         for line in infile:
             if line.startswith('Immune System:'):

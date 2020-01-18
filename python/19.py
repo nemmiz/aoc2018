@@ -95,7 +95,7 @@ def main():
     iptr_reg = 0
     instructions = []
 
-    with open('19_input') as infile:
+    with open('../input/19.txt') as infile:
         for line in infile:
             m = re.match('^#ip (\d+)\s*$', line)
             if m:

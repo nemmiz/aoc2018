@@ -147,7 +147,7 @@ def part_2(map_data):
 
 
 def main():
-    with open('15_input') as infile:
+    with open('../input/15.txt') as infile:
         map_data = infile.read()
 
     print('Part 1:')

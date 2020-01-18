@@ -90,7 +90,7 @@ def simulate(map_data, times, cycle_threshold=500):
 
 
 def main():
-    with open('18_input') as infile:
+    with open('../input/18.txt') as infile:
         map_data = [list(line.rstrip('\n')) for line in infile]
 
     simulate(map_data, 10)

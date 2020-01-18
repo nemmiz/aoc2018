@@ -27,7 +27,7 @@ def count_constellations(coords):
 
 
 def main():
-    with open('25_input') as infile:
+    with open('../input/25.txt') as infile:
         coords = [tuple(map(int, line.strip().split(','))) for line in infile]
         print(count_constellations(coords))
 

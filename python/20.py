@@ -232,7 +232,7 @@ def main():
     assert 23 == parse("^ESSWWN(E|NNENN(EESS(WNSE|)SSS|WWWSSSSE(SW|NNNE)))$").max_room_distance()
     assert 31 == parse("^WSSEESWWWNW(S|NENNEEEENN(ESSSSW(NWSW|SSEN)|WSWWN(E|WWS(E|SS))))$").max_room_distance()
 
-    with open('20_input') as infile:
+    with open('../input/20.txt') as infile:
         regex = infile.read()
         area = parse(regex)
         print(area.max_room_distance())

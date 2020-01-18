@@ -42,15 +42,16 @@ def work(num_workers, tasks, verbose=False, simulate_time=False):
         if verbose:
             print()
     if simulate_time:
-        print('Finished on second', time_spent)
-    print('Output:', output.getvalue())
+        print(time_spent)
+    else:
+        print(output.getvalue())
 
 
 
 def main():
     dependencies = {}
 
-    with open('07_input') as infile:
+    with open('../input/07.txt') as infile:
         data = [(line[36], line[5]) for line in infile]
         for d in data:
             dependencies[d[0]] = []
@@ -59,7 +60,6 @@ def main():
             dependencies[d[0]].append(d[1])
 
     work(1, dependencies)
-    print()
     work(5, dependencies, simulate_time=True)
 
 if __name__ == "__main__":

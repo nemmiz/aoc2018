@@ -2,8 +2,8 @@
 
 from itertools import cycle
 
-with open('01_input') as inp:
-    numbers = [int(line) for line in inp]
+with open('../input/01.txt') as f:
+    numbers = [int(line) for line in f]
 
 seen = set()
 freq = 0
@@ -14,5 +14,4 @@ for number in cycle(numbers):
     seen.add(freq)
     freq += number
 
-print(sum(numbers), freq)
-        
+print(sum(numbers), freq, sep='\n')        

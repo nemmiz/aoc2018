@@ -98,7 +98,7 @@ def task_2(befores, afters, instructions):
     regs = [0, 0, 0, 0]
     for inst in instructions[len(befores):]:
         OPCODES[opcode_numbers[inst[0]]](regs, inst)
-    print(regs)
+    print(regs[0])
 
 
 def main():
@@ -106,7 +106,7 @@ def main():
     afters = []
     instructions = []
 
-    with open('16_input') as infile:
+    with open('../input/16.txt') as infile:
         for line in infile:
             m = re.match('^(\d+)\s+(\d+)\s+(\d+)\s+(\d+)\s*$', line)
             if m:

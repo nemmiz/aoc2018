@@ -42,7 +42,7 @@ class Points:
     def visualize(self):
         width = self.bounds[2] - self.bounds[0] + 1
         height = self.bounds[3] - self.bounds[1] + 1
-        pixels = ['.'] * (width * height)
+        pixels = [' '] * (width * height)
         for i in range(self.num_points):
             x = self.xpos[i] - self.bounds[0]
             y = self.ypos[i] - self.bounds[1]
@@ -54,7 +54,7 @@ class Points:
 def main():
     points = Points()
     
-    with open('10_input') as infile:
+    with open('../input/10.txt') as infile:
         for line in infile:
             m = re.match(r'position=<\s*(-?\d+),\s*(-?\d+)> velocity=<\s*(-?\d+),\s*(-?\d+)>', line)
             if not m:

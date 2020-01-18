@@ -137,7 +137,7 @@ class ScanMap:
 
 
 def main():
-    scan_map = ScanMap('17_input')
+    scan_map = ScanMap('../input/17.txt')
     scan_map.simulate()
 
 

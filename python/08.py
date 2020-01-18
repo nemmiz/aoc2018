@@ -28,13 +28,14 @@ def calculate(data, index, metadata_sum):
 
 
 def main():
-    with open('08_input') as infile:
+    with open('../input/08.txt') as infile:
         for line in infile:
             numbers = [int(x.group(0)) for x in re.finditer(r'\d+', line)]
             break
 
     index, metasum, value = calculate(numbers, 0, 0)
-    print(index, metasum, value)
+    print(metasum)
+    print(value)
 
 if __name__ == "__main__":
     main()

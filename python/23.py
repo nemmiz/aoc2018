@@ -103,7 +103,7 @@ def distance_to_best_coord(box, nanobots):
 def main():
     nanobots = []
 
-    with open('23_input') as infile:
+    with open('../input/23.txt') as infile:
         for line in infile:
             m = re.match('^pos=<(-?\d+),(-?\d+),(-?\d+)>, r=(\d+)\s*$', line)
             assert m

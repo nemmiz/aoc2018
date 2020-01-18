@@ -39,7 +39,7 @@ def main():
     xcoords = []
     ycoords = []
 
-    with open('06_input') as infile:
+    with open('../input/06.txt') as infile:
         for line in infile:
             strx, stry = line.split(',')
             xcoords.append(int(strx))

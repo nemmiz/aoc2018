@@ -92,7 +92,7 @@ def main():
     cart_width = None
     cart_height = 0
     cart_map = []
-    with open('13_input') as infile:
+    with open('../input/13.txt') as infile:
         for line in infile:
             stripped = line.rstrip('\n')
             if cart_width is None:
@@ -105,14 +105,14 @@ def main():
     while True:
         result = tracks1.move_carts()
         if result is not None:
-            print(result)
+            print(*result, sep=',')
             break
 
     tracks2 = TrackSystem(cart_map.copy(), cart_width)
     while True:
         result = tracks2.move_carts(remove_collided=True)
         if result is not None:
-            print(result)
+            print(*result, sep=',')
             break
 
 

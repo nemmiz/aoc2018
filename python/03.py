@@ -12,7 +12,6 @@ def parse_claim(claim):
         sys.exit('Invalid claim {}'.format(claim))
     return tuple(int(value) for value in m.groups())
     
-    
 def mark_fabric(claims):
     fabric = [0] * (WIDTH * HEIGHT)
     for claim in claims:
@@ -28,7 +27,7 @@ def overlaps(fabric, claim):
                 return True
     return False
 
-with open('03_input') as infile:
+with open('../input/03.txt') as infile:
     claims = [parse_claim(line) for line in infile]
 
 fabric = mark_fabric(claims)
@@ -39,4 +38,3 @@ print("Overlapping square inches:", overlapping)
 for claim in claims:
     if not overlaps(fabric, claim):
         print("Claim with no overlap:", claim[0])
-
